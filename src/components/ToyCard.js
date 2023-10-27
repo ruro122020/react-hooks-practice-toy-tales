@@ -2,7 +2,6 @@ import React from "react";
 
 function ToyCard({toy}) {
   const {id, image, name, likes} = toy
-  console.log(toy)
   return (
     <div className="card">
       <h2>{name}</h2>
