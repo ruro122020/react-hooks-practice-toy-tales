@@ -5,16 +5,15 @@ Delete toy card:
   -create a delete state boolean that will remove toyCard if true
   -set delete state to true when 'Donate to Goodwill' btn is clicked
 */
-function ToyCard({toy}) {
+function ToyCard({toy, onDeleteToy}) {
   const {id, image, name, likes} = toy
-  const [deleteToy, setDeleteToy] = useState(true)
 
   const handleDeleteClick=()=>{
     fetch(`http://localhost:3001/toys/${id}`, {
       method: 'DELETE'
     })
     .then(res => res.json())
-    .then(()=> console.log('deleted!'))
+    .then(()=> onDeleteToy(toy))
   }
   return (
     <div className="card">
