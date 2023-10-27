@@ -16,7 +16,7 @@ function App() {
   function handleClick() {
     setShowForm((showForm) => !showForm);
   }
-
+  //add toy data from form to toys array
   const handleNewToy=(newToy)=>{
     setToys(prevState => [...prevState, newToy])
   }
