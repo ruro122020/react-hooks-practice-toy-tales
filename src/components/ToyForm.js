@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function ToyForm() {
+function ToyForm({onAddToy}) {
   const [formData, setFormData] = useState({
     name:'',
     image:'',
@@ -27,7 +27,7 @@ function ToyForm() {
       body:JSON.stringify(formData)
     })
     .then(res => res.json())
-    .then(newToy => console.log(newToy))
+    .then(newToy => onAddToy(newToy))
   }
   return (
     <div className="container" onSubmit={handleSubmit}>

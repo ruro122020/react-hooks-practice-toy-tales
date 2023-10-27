@@ -17,10 +17,14 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  const handleNewToy=(newToy)=>{
+    setToys(prevState => [...prevState, newToy])
+  }
+
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm onAddToy={handleNewToy}/> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
