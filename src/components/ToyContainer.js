@@ -2,6 +2,7 @@ import React from "react";
 import ToyCard from "./ToyCard";
 
 function ToyContainer({toys, setToys}) {
+  
   const onDeleteToy =(deleteToy)=>{
     const newToys = toys.filter(toy => toy.id !== deleteToy.id)
     setToys(newToys)
